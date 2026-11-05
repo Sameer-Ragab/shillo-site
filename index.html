@@ -15,6 +15,10 @@
     the `--base-href` argument provided to `flutter build`.
   -->
   <base href="/shillo-site/">
+  <script>
+    // Perf: cap render pixel ratio so Flutter (CanvasKit) doesn't paint at full 3x on phones (fixes scroll jank).
+    (function(){var MAX=1.5;try{var real=window.devicePixelRatio||1;if(real>MAX){Object.defineProperty(window,'devicePixelRatio',{get:function(){return MAX;},configurable:true});}}catch(e){}})();
+  </script>
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
