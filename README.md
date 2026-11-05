@@ -1,4 +1,5 @@
 # شِلّو — الموقع
-نسخة Flutter Web منشورة على GitHub Pages.
+صفحة HTML/CSS/JS واحدة (من غير فريمورك) منشورة على GitHub Pages.
 - الرابط: https://sameer-ragab.github.io/shillo-site/
-- لو اتربط دومين `shillo.app`: غيّر `<base href="/shillo-site/">` إلى `<base href="/">` في `index.html` و`404.html`.
+- كل المسارات نسبية، فتشتغل على أي دومين أو مسار من غير تعديل.
+- النسخة القديمة (Flutter Web) متاحة في تاريخ git قبل الكوميت ده، وكود المشروع في ملف shillo_project.zip.
