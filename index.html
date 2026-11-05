@@ -9,7 +9,7 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="icons/Icon-192.png">
 <link rel="preload" href="fonts/baloo-800.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="img/screen_home.webp" as="image">
+<link rel="preload" as="image" href="img/screen_home_820.webp" imagesrcset="img/screen_home_480.webp 480w, img/screen_home_820.webp 820w" imagesizes="(max-width:699px) 300px, 407px" fetchpriority="high">
 <script>
 try{var t=localStorage.getItem('shillo_theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}
 </script>
@@ -146,8 +146,9 @@ html,body{overflow-x:clip}
 .phone{--w:300px;width:var(--w);height:calc(var(--w)*2.128);padding:calc(var(--w)*.017 + 1px);background:var(--pb,#24093F);border-radius:calc(var(--w)*.133);box-shadow:0 28px 32px var(--shadow),0 calc(var(--w)*.02) 0 var(--pe,var(--purpleedge));position:relative}
 .phone .scr{width:100%;height:100%;border-radius:calc(var(--w)*.133 - var(--w)*.017 - 1px);overflow:hidden;background:#EFE9F5;position:relative}
 .phone img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hphone{--w:calc(407px*var(--k));left:calc(50% - var(--w)/2);top:calc(40px*var(--k))}
-.stk{display:inline-block;padding:4px calc(26px*var(--f));border-radius:100px;font-weight:800;font-size:calc(16px*var(--f));line-height:1.5;box-shadow:0 6px 10px var(--shadow),0 4px 0 var(--se)}
+.hphone{left:calc(50% - 203.5px*var(--k));top:calc(40px*var(--k))}
+.hphone .phone{--w:calc(407px*var(--k))}
+.stk{white-space:nowrap;display:inline-block;padding:4px calc(26px*var(--f));border-radius:100px;font-weight:800;font-size:calc(16px*var(--f));line-height:1.5;box-shadow:0 6px 10px var(--shadow),0 4px 0 var(--se)}
 .mc{background:var(--card);color:var(--title);box-shadow:0 14px 28px var(--shadow);text-align:start}
 .mc h4{font-weight:800;line-height:1.3}.mc p{color:var(--sub);line-height:1.4}
 .mini{display:flex;align-items:center;justify-content:center;height:calc(38px*var(--f));border-radius:100px;font-weight:800;font-size:calc(14px*var(--f));line-height:1.2;box-shadow:0 3px 0 var(--me)}
@@ -168,11 +169,11 @@ html,body{overflow-x:clip}
 @media(max-width:380px){.rew,.inv{display:none}}
 @media(min-width:700px){
   .hero{padding:180px 40px 0}
-  .hero .badges{flex-direction:row;max-width:none;width:auto;margin-top:30px}
+  .hero .badges{flex-direction:row;max-width:none;width:auto;margin-top:26px}
   .hero .badges .btn{width:auto;--bh:62px;--bp:24px}
   .hero .badge b{font-size:20px}.hero .badge svg{width:34px;height:34px}.hero .badge img{width:30px;height:30px}
   .hero .h1{gap:6px 30px}.pill{font-size:32px;padding:8px 36px}
-  .stage{margin-top:56px}
+  .stage{margin-top:36px}
   .live{padding-inline-end:26px}
 }
 
@@ -367,6 +368,26 @@ footer nav{display:flex}footer nav a{padding:0 14px;cursor:pointer}footer nav a:
 @media(min-width:700px){footer .fti{flex-direction:row;justify-content:space-between}footer .cp{order:2}}
 
 
+@media(max-width:699px){
+  .nav{top:calc(24px + env(safe-area-inset-top))}
+  .hero{padding-top:146px}
+  .hero .badges{gap:12px}
+  .badge{--bh:60px}
+  .badge b,.hero .badge b,.island .badge b{font-size:20px}
+  .badge small{font-size:12px}
+  .badge svg,.hero .badge svg{width:34px;height:34px}.badge img,.hero .badge img{width:30px;height:30px}
+  .hero .badges .btn,.island .badges .btn{--bh:60px}
+  .stage{height:460px;margin-top:28px}
+  .hphone{left:calc(50% - 150px);top:12px}
+  .hphone .phone{--w:300px}
+  .s1{--f:.9;left:20px;top:40px}.s2{--f:.9;left:250px;top:30px}
+  .rew{--k:.65;--f:.7;left:-4px;top:217px}
+  .inv{--k:.5;--f:.55;left:170px;top:307px}
+  .inv .mini,.rew .mini{height:24px}
+}
+
+.scr.lq{background:#EFE9F5 url(data:image/webp;base64,UklGRr4BAABXRUJQVlA4ILIBAADwCQCdASoYADsAPu1mq08ppSOiLBqrMTAdiWwAxPlQyAYW3ZLT7OMirUW5Jik51McmPAw7cm+fvVDERpQkb6gdPME4WkTRqXMDObQ7V5byCKoP4HqEzGkAAP7zdtWBMxsJTYg8olWP146Jb0UtP50Cs6cD56poqO2mexSDw36C5knyNSZKvPSB8yQOKliSsvXH5iFXH99ORxTVKmQeKqmdGYfcW87IP4ADVnm/vQNpAZGOVaj7OiMktc7CII57Yw5AopJMaV6oQ/7Ce3TZEl6enWPOOL3fJvLSKjc6b0t+ikHO7wPcQ6zgdbDtPsi5W1UrT7tsF/e+5nYMapTTIDMQhzz5Y9QsZLbNGjO9XWm0oAD9MA6d8dmUSSzjXEI47okBt778Pw379DW3yzYaMYhRK1Dw2JSV4jUQvf6Kxsl3pIfivXwLRW0sHM6LzL1j5I+OaTUKeJhsJ7aTVIxxN323oh1Iz6yKwXaKp0+d6ML+kK2LdHxmvM0e/7jiPqJRaw2L6/SzLQ2htjzZzQ8wTRvp0t2mXwMFTN1+fryuv/6rWgnDqjVPwL5CniHIjV8mg8AAAA==) center/cover no-repeat}
+
 /* ── motion polish ── */
 .pop{transition-timing-function:cubic-bezier(.34,1.56,.64,1)!important}
 @keyframes badge{0%{transform:scale(0) rotate(-40deg)}60%{transform:scale(1.18) rotate(6deg)}100%{transform:none}}
@@ -444,13 +465,13 @@ footer nav{display:flex}footer nav a{padding:0 14px;cursor:pointer}footer nav a:
     </div>
   </div>
   <div class="stage" id="hstage">
-    <div class="hphone rv" style="--dy:calc(120px*var(--k));--d:.76s;--dur:1.2s"><div class="fl" style="--amp:6px;--dur:10s"><div class="phone hp"><div class="scr"><img src="img/screen_home.webp" alt="شاشة تطبيق شِلّو الرئيسية" width="820" height="2011" fetchpriority="high"></div></div></div></div>
-    <div class="rew rv" style="--d:1.25s;--dx:calc(-40px*var(--k));--dy:calc(40px*var(--k));--s:.8"><div class="fl" style="--amp:6px;--ph:-1.6s"><div class="mc" style="transform:rotate(5deg);padding:inherit;border-radius:inherit;padding:calc(12px*var(--k)) calc(18px*var(--k));border-radius:calc(26px*var(--k))"><h4>مكافأة الماتش</h4><p>XP 40+ · 20+ نقطة حريفة</p></div></div></div>
-    <div class="inv rv" style="--d:1.4s;--dx:calc(40px*var(--k));--dy:calc(40px*var(--k));--s:.8"><div class="fl" style="--amp:6px;--ph:-4.8s"><div class="mc" style="transform:rotate(-4deg);padding:calc(16px*var(--k));border-radius:calc(26px*var(--k))">
+    <div class="hphone rv" style="--dy:calc(70px*var(--k));--d:.1s"><div class="fl" style="--amp:6px;--dur:10s"><div class="phone hp"><div class="scr lq"><img src="img/screen_home_820.webp" srcset="img/screen_home_480.webp 480w, img/screen_home_820.webp 820w" sizes="(max-width:699px) 300px, 407px" alt="شاشة تطبيق شِلّو الرئيسية" width="820" height="2011" fetchpriority="high" decoding="async"></div></div></div></div>
+    <div class="rew rv" style="--d:.55s;--dx:calc(-40px*var(--k));--dy:calc(40px*var(--k));--s:.8"><div class="fl" style="--amp:6px;--ph:-1.6s"><div class="mc" style="transform:rotate(5deg);padding:inherit;border-radius:inherit;padding:calc(12px*var(--k)) calc(18px*var(--k));border-radius:calc(26px*var(--k))"><h4>مكافأة الماتش</h4><p>XP 40+ · 20+ نقطة حريفة</p></div></div></div>
+    <div class="inv rv" style="--d:.7s;--dx:calc(40px*var(--k));--dy:calc(40px*var(--k));--s:.8"><div class="fl" style="--amp:6px;--ph:-4.8s"><div class="mc" style="transform:rotate(-4deg);padding:calc(16px*var(--k));border-radius:calc(26px*var(--k))">
       <div class="row"><div class="av"><img src="img/avatar_a1.webp" alt="" width="44" height="44"></div><div class="tx"><h4>مصري بيدعوك تلعب</h4><p>دومينو مصري · 2 ضد 2 · الهدف 151</p></div><span class="tm">باقي 01:30</span></div>
       <div class="btns"><span class="mini y">قبول</span><span class="mini n">رفض</span></div></div></div></div>
-    <div class="s1 rv pop" style="--d:1.05s;--s:.3"><div class="fl" style="--amp:5px;--ph:-3.2s"><span class="stk" style="transform:rotate(-8deg);background:var(--limehi);color:var(--onbrand);--se:var(--limeedge)">مجاني</span></div></div>
-    <div class="s2 rv pop" style="--d:1.15s;--s:.3"><div class="fl" style="--amp:5px;--ph:-6.4s"><span class="stk" style="transform:rotate(7deg);background:var(--purple);color:#fff;--se:var(--purpleedge)">لعب نضيف</span></div></div>
+    <div class="s1 rv pop" style="--d:.4s;--s:.3"><div class="fl" style="--amp:5px;--ph:-3.2s"><span class="stk" style="transform:rotate(-8deg);background:var(--limehi);color:var(--onbrand);--se:var(--limeedge)">مجاني</span></div></div>
+    <div class="s2 rv pop" style="--d:.5s;--s:.3"><div class="fl" style="--amp:5px;--ph:-6.4s"><span class="stk" style="transform:rotate(7deg);background:var(--purple);color:#fff;--se:var(--purpleedge)">لعب نضيف</span></div></div>
   </div>
 </section>
 
@@ -548,7 +569,7 @@ footer nav{display:flex}footer nav a{padding:0 14px;cursor:pointer}footer nav a:
     </div>
     <div class="phs">
       <div class="p2 rv" style="--d:.45s;--dy:140px;--dx:40px;--r:8deg"><div class="phone"><div class="scr"><img src="img/screen_quiz.webp" alt="" loading="lazy" width="820" height="1700"></div></div></div>
-      <div class="p1 rv" style="--d:.3s;--dy:160px;--dx:-40px;--r:-8deg"><div class="phone"><div class="scr"><img src="img/screen_home.webp" alt="" loading="lazy" width="820" height="2011"></div></div></div>
+      <div class="p1 rv" style="--d:.3s;--dy:160px;--dx:-40px;--r:-8deg"><div class="phone"><div class="scr"><img src="img/screen_home_480.webp" srcset="img/screen_home_480.webp 480w, img/screen_home_820.webp 820w" sizes="230px" alt="" loading="lazy" width="820" height="2011"></div></div></div>
       <div class="rv pop ic1" style="--d:1.1s;--s:.2;--r:-40deg;position:absolute"><div class="fl" style="--amp:6px"><img src="img/icon_trophy.webp" alt="" style="width:100%" loading="lazy"></div></div>
       <div class="rv pop ic2" style="--d:1.25s;--s:.2;--r:40deg;position:absolute"><div class="fl" style="--amp:6px;--ph:-2.4s"><img src="img/icon_crown.webp" alt="" style="width:100%" loading="lazy"></div></div>
     </div>
