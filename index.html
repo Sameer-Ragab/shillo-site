@@ -410,7 +410,8 @@ footer nav{display:flex}footer nav a{padding:0 14px;cursor:pointer}footer nav a:
 .stg .glow{animation:glowp 6s ease-in-out infinite}
 @keyframes glowp{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}}
 .paused .stg .glow{animation-play-state:paused}
-.hero .glow{transform:translate3d(0,var(--py,0px),0)}
+.hero{isolation:isolate}.hero .glow{z-index:0;transform:translate3d(0,var(--py,0px),0)}.hero-c{position:relative;z-index:1}
+@media(max-width:699px){.hero .glow{transform:none}}
 .mq:hover .mq-track{animation-play-state:paused}
 .stk{transition:transform .3s var(--ease)}
 .stk:hover{transform:rotate(0deg) scale(1.1)!important}
@@ -734,7 +735,7 @@ document.querySelectorAll('.hero,.mq,.steps,.bento,.faq,.island,.stg').forEach(f
 /* scroll loop */
 var tick=false;
 var hero=$('.hero');
-function onS(){if(!tick){tick=true;requestAnimationFrame(function(){tick=false;gUpdate();if(!reduce&&scrollY<1400)hero.style.setProperty('--py',(scrollY*.12).toFixed(1)+'px')})}}
+function onS(){if(!tick){tick=true;requestAnimationFrame(function(){tick=false;gUpdate();if(!reduce&&innerWidth>=700&&scrollY<1400)hero.style.setProperty('--py',(scrollY*.12).toFixed(1)+'px')})}}
 addEventListener('scroll',onS,{passive:true});
 addEventListener('resize',function(){setTrack();lastPr=-1;onS()});
 setTrack();setActive(0);gUpdate();
