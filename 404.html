@@ -15,10 +15,6 @@
     the `--base-href` argument provided to `flutter build`.
   -->
   <base href="/shillo-site/">
-  <script>
-    // Perf: cap render pixel ratio so Flutter (CanvasKit) doesn't paint at full 3x on phones (fixes scroll jank).
-    (function(){var MAX=1.5;try{var real=window.devicePixelRatio||1;if(real>MAX){Object.defineProperty(window,'devicePixelRatio',{get:function(){return MAX;},configurable:true});}}catch(e){}})();
-  </script>
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -44,7 +40,6 @@
   #splash{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#f6effb;color:#7c2ff0;font:800 44px/1 system-ui,sans-serif;z-index:0;transition:opacity .4s}
   #splash i{width:34px;height:34px;border-radius:50%;border:4px solid rgba(124,47,240,.18);border-top-color:#7c2ff0;animation:sp .9s linear infinite}
   @keyframes sp{to{transform:rotate(360deg)}}
-  @media (prefers-color-scheme:dark){#splash{background:#140126;color:#b78bff}}
 </style>
 <div id="splash"><span>شِلّو</span><i></i></div>
 <script>window.addEventListener('flutter-first-frame',function(){var s=document.getElementById('splash');if(s){s.style.opacity=0;setTimeout(function(){s.remove()},450)}});</script>
