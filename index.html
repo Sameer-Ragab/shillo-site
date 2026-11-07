@@ -361,11 +361,14 @@ html,body{overflow-x:clip}
   .phs .ic1{width:110px;left:190px;top:24px}.phs .ic2{width:84px;top:230px;right:-30px}
 }
 
-/* ── footer ── */
-footer{background:var(--card);padding:24px var(--margin)}
-footer .fti{display:flex;flex-direction:column;gap:12px;max-width:1200px;margin-inline:auto;font-size:14px}
-footer nav{display:flex}footer nav a{padding:0 14px;cursor:pointer}footer nav a:first-child{padding-inline-start:0}
-@media(min-width:700px){footer .fti{flex-direction:row;justify-content:space-between}footer .cp{order:2}}
+/* ── footer ── (Figma 07 · Footer: موبايل 32/20 عمودي متوسّط gap 12 · ديسكتوب 26/هامش صف) */
+footer{background:var(--card);padding:32px var(--margin) calc(32px + env(safe-area-inset-bottom))}
+footer .fti{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:1200px;margin-inline:auto;font-size:14px;line-height:22px}
+footer .cp{color:var(--body)}
+footer nav{display:flex;gap:28px}
+footer nav a{color:var(--title);cursor:pointer;transition:color .2s}
+footer nav a:hover,footer nav a[aria-current]{color:var(--purple)}
+@media(min-width:700px){footer{padding-block:26px calc(26px + env(safe-area-inset-bottom))}footer .fti{flex-direction:row;justify-content:space-between}footer nav{gap:36px}footer .cp{order:2}}
 
 
 @media(max-width:699px){
@@ -579,8 +582,8 @@ footer nav{display:flex}footer nav a{padding:0 14px;cursor:pointer}footer nav a:
 </main>
 
 <footer><div class="fti">
-  <span class="cp rv" style="--d:.2s;--dy:14px">© ٢٠٢٦ شِلّو</span>
-  <nav class="rv" style="--dy:14px"><a>تواصل معانا</a><a>الشروط</a><a>الخصوصية</a></nav>
+  <span class="cp">© ٢٠٢٦ شِلّو</span>
+  <nav aria-label="روابط الفوتر"><a>تواصل معانا</a><a>الشروط</a><a href="privacy.html">الخصوصية</a></nav>
 </div></footer>
 
 <script>
