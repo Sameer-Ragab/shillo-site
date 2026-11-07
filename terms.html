@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>شروط الاستخدام — شِلّو</title>
+<meta name="description" content="شروط استخدام تطبيق شِلّو: الحساب، قواعد اللعب، والمحتوى.">
+<meta name="theme-color" content="#7c2ff0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="icons/Icon-192.png">
+<link rel="preload" href="fonts/baloo-800.woff" as="font" type="font/woff" crossorigin>
+<script>
+try{var t=localStorage.getItem('shillo_theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}
+</script>
+<style>
+@font-face{font-family:Baloo;font-weight:500;font-display:swap;src:url(fonts/baloo-500.woff) format("woff")}
+@font-face{font-family:Baloo;font-weight:700;font-display:swap;src:url(fonts/baloo-700.woff) format("woff")}
+@font-face{font-family:Baloo;font-weight:800;font-display:swap;src:url(fonts/baloo-800.woff) format("woff")}
+:root{
+  --ease:cubic-bezier(.16,1,.3,1);
+  --title:#24093F;--sub:#6C5A80;--body:#8E7EA0;
+  --card:#fff;--sunken:#F7F0FB;--stroke:#EDE2F6;
+  --lime:#99E329;--purple:#8A3BF2;--purpleedge:#3D0C6E;--purpletint:#F1E7FE;
+  --glass:rgba(255,255,255,.78);--shadow:rgba(36,9,63,.12);
+  --margin:20px;
+}
+:root[data-theme=dark]{
+  --title:#F5F2FA;--sub:#9C94AE;--body:#988AA8;
+  --card:#18141F;--sunken:#110E18;--stroke:rgba(255,255,255,.06);
+  --lime:#A3E635;--purple:#8948F4;--purpleedge:#3F168A;--purpletint:#221838;
+  --glass:rgba(31,26,41,.7);--shadow:rgba(0,0,0,.55);
+  color-scheme:dark;
+}
+@media(min-width:700px){:root{--margin:48px}}
+@media(min-width:1100px){:root{--margin:64px}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Baloo,system-ui,sans-serif;font-weight:500;color:var(--title);background:var(--card);line-height:1.4;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* nav — نفس نافبار الصفحة الرئيسية */
+.nav{position:fixed;top:calc(10px + env(safe-area-inset-top));inset-inline:12px;z-index:50;display:flex;justify-content:center;pointer-events:none}
+.nav-in{pointer-events:auto;width:100%;max-width:800px;display:flex;align-items:center;padding:12px 14px;border-radius:1000px;background:var(--glass);border:1.5px solid var(--stroke);box-shadow:0 6px 18px var(--shadow);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.nav .logo{font-size:28px;font-weight:800;color:var(--purple);line-height:1.3;flex:1}
+.nav .acts{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:1000px;background:var(--purple);color:#fff;font-weight:800;font-size:15px;box-shadow:0 4px 0 var(--purpleedge);transition:transform .2s var(--ease)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--purpleedge)}
+.tg{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--stroke);background:var(--card);display:grid;place-items:center;color:var(--purple);cursor:pointer}
+.tg svg{width:20px;height:20px}.tg .sun{display:none}
+:root[data-theme=dark] .tg .sun{display:block}:root[data-theme=dark] .tg .moon{display:none}
+
+/* content */
+main{max-width:760px;margin-inline:auto;padding:calc(120px + env(safe-area-inset-top)) var(--margin) 64px}
+.hd{text-align:center;margin-bottom:40px}
+.chip{display:inline-block;padding:6px 16px;border-radius:1000px;background:var(--purpletint);color:var(--purple);font-size:14px;font-weight:700}
+h1{font-size:40px;font-weight:800;line-height:1.25;margin-top:16px}
+.hd p{color:var(--body);margin-top:8px;font-size:16px}
+.card{background:var(--sunken);border:1.5px solid var(--stroke);border-radius:28px;padding:24px;margin-bottom:16px}
+h2{font-size:22px;font-weight:800;line-height:1.35;margin-bottom:10px}
+.card p,.card li{font-size:16px;color:var(--sub);line-height:1.75}
+.card ul{padding-inline-start:20px;display:flex;flex-direction:column;gap:6px}
+.card li::marker{color:var(--purple)}
+.card a.ln{color:var(--purple);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.card b{color:var(--title);font-weight:700}
+.note{font-size:14px;color:var(--body);text-align:center;margin-top:24px}
+@media(min-width:700px){h1{font-size:56px}.card{padding:32px}h2{font-size:24px}}
+
+/* footer — Figma 07 · Footer */
+footer{background:var(--card);padding:32px var(--margin) calc(32px + env(safe-area-inset-bottom))}
+footer .fti{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:1200px;margin-inline:auto;font-size:14px;line-height:22px}
+footer .cp{color:var(--body)}
+footer nav{display:flex;gap:28px}
+footer nav a{color:var(--title);cursor:pointer;transition:color .2s}
+footer nav a:hover,footer nav a[aria-current]{color:var(--purple)}
+@media(min-width:700px){footer{padding-block:26px calc(26px + env(safe-area-inset-bottom))}footer .fti{flex-direction:row;justify-content:space-between}footer nav{gap:36px}footer .cp{order:2}}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="nav-in">
+  <a class="logo" href="./">شِلّو</a>
+  <div class="acts">
+    <a class="btn" href="./#cta">حمّل التطبيق</a>
+    <button class="tg" id="tg" aria-label="تبديل الوضع الداكن / الفاتح" title="تبديل الوضع">
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</div></header>
+
+<main>
+  <div class="hd">
+    <span class="chip">آخر تحديث: ٧ نوفمبر ٢٠٢٦</span>
+    <h1>شروط الاستخدام</h1>
+    <p>القواعد اللي بتخلّي اللعب حلو للشلة كلها.</p>
+  </div>
+
+  <section class="card">
+    <h2>الموافقة على الشروط</h2>
+    <p>لما تحمّل «شِلّو» أو تستخدمه، تبقى موافق على الشروط دي وعلى <a class="ln" href="privacy.html">سياسة الخصوصية</a>. لو مش موافق، ما تستخدمش التطبيق.</p>
+  </section>
+
+  <section class="card">
+    <h2>مين يقدر يستخدم شِلّو</h2>
+    <p>لازم يكون عندك ١٣ سنة على الأقل. لو أقل من السن القانوني في بلدك، لازم يكون ولي أمرك موافق.</p>
+  </section>
+
+  <section class="card">
+    <h2>حسابك</h2>
+    <ul>
+      <li>تقدر تلعب ضيف أو تدخل بحساب جوجل.</li>
+      <li>إنت مسؤول عن اللي بيحصل من حسابك، فحافظ على جهازك وحساب جوجل بتاعك.</li>
+      <li>اختار اسم مناسب: ممنوع أسماء مسيئة أو بتنتحل شخصية حد.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>اللعب بأدب</h2>
+    <ul>
+      <li>ممنوع الشتيمة والتنمّر والتحرّش وخطاب الكراهية في الأسماء أو الغرف.</li>
+      <li>ممنوع الغش، أو استغلال الأخطاء، أو استخدام برامج تلاعب بالنتايج والترتيب.</li>
+      <li>ممنوع إزعاج اللاعبين أو إغراق الغرف بالدعوات.</li>
+      <li>ممنوع تحاول تخترق التطبيق أو سيرفراته أو تعطّلها.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>لو حد خالف الشروط</h2>
+    <p>من حقّنا نشيل اسم مخالف، أو نصفّر نتايج متلاعب فيها، أو نوقف الحساب مؤقتاً أو نهائياً، حسب حجم المخالفة.</p>
+  </section>
+
+  <section class="card">
+    <h2>المحتوى والملكية</h2>
+    <p>التطبيق وتصميمه وشخصياته وأسئلته ملك «شِلّو». نسمح لك تستخدمه للعب الشخصي، بس ما تنسخش أو تبيع أو تعيد نشر أي جزء منه من غير إذن.</p>
+  </section>
+
+  <section class="card">
+    <h2>التطبيق مجاني</h2>
+    <p>شِلّو مجاني دلوقتي. لو ضفنا أي حاجة مدفوعة بعدين، هيبان سعرها وشروطها بوضوح قبل ما تشتري، والدفع بيتم عن طريق Google Play أو App Store.</p>
+  </section>
+
+  <section class="card">
+    <h2>الخدمة زي ما هي</h2>
+    <p>بنعمل اللي نقدر عليه علشان التطبيق يشتغل كويس، بس مش بنضمن إنه يفضل شغّال طول الوقت من غير أعطال أو انقطاع. ممكن نعدّل أو نوقف أي لعبة أو ميزة. ومش هنكون مسؤولين عن أي خسارة غير مباشرة بسبب استخدام التطبيق، في حدود اللي القانون بيسمح بيه.</p>
+  </section>
+
+  <section class="card">
+    <h2>تعديل الشروط وإزاي تكلّمنا</h2>
+    <p>لو غيّرنا الشروط هنحدّث تاريخ «آخر تحديث» فوق، واستمرارك في استخدام التطبيق بعدها معناه إنك موافق عليها. لأي سؤال، استخدم إيميل المطوّر الموجود في صفحة شِلّو على Google Play أو App Store.</p>
+  </section>
+</main>
+
+<footer><div class="fti">
+  <span class="cp">© ٢٠٢٦ شِلّو</span>
+  <nav aria-label="روابط الفوتر"><a>تواصل معانا</a><a href="terms.html" aria-current="page">الشروط</a><a href="privacy.html">الخصوصية</a></nav>
+</div></footer>
+
+<script>
+document.getElementById('tg').addEventListener('click',function(){
+  var r=document.documentElement,n=r.getAttribute('data-theme')==='dark'?'light':'dark';
+  r.setAttribute('data-theme',n);
+  try{localStorage.setItem('shillo_theme',n)}catch(e){}
+  var m=document.querySelector('meta[name=theme-color]');if(m)m.content=n==='dark'?'#0C0A12':'#7c2ff0';
+});
+</script>
+</body>
+</html>
